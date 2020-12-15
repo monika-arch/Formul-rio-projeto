@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<style> 
+font-family: Oswald ,sans-serif;
+font-size: 1.75em;
+padding: 0.6em 0 0.6em 0.4em;
+color: white;
+text-shadow: 0 0.06em 0 Black;
+position: relative;
+}
+.contactbutton {
+background: white;
+text-align: center;
+display: block;
+width: 100%;
+margin-top: 20px;
+margin-bottom: 2px;
+cursor: pointer;
+}
+.contactbutton:hover {
+-webkit-box-shadow: 1px 1px 0 0 white,0px 0px 0 0 white,0px 0px 0 0 white;
+box-shadow: 1px 1px 0 0 white, 0px 0px 0 0 red,0px 0px 0 0 white;
+margin-top: 22px;
+margin-left: 2px;
+margin-bottom: 0px;
+}
+.mail {
+margin-top: 11px;
+font-size: 18px;
+border-left: 2.6em solid white;
+height: 0;
+width: 0;
+position: relative;
+}
+.mail:before {
+content: '';
+top: -2.5em;
+left: -2.95em;
+display: block;
+position: absolute;
+border-left: 2.0em solid transparent;
+border-right: 2.0em solid transparent;
+border-bottom: 2em solid transparent;
+font-size: 0.8em;
+}
+.mail::after {
+display: block;
+content: "";
+position: absolute;
+border-right: 2.6em solid white;
+height: 0;
+width: 0;
+left: -2.18em;
+bottom: 0;
+}
+#checkcontact{
+position: absolute;
+left: -9999px;
+}
+h2{
+  text-align: center;
+   margin-top: 0px;
+}
+.contactform {
+overflow: hidden;
+max-height: 0px;
+-webkit-transition: all linear 1s;
+-moz-transition: all linear 1s;
+-o-transition: all linear 1s;
+-ms-transition: all linear 1s;
+transition: all linear 1s;
+}
+#checkcontact:checked + .contactform {
+max-height: 1000px;
+}
+.input_wrapper {
+position: relative;
+}
+.textarea_wrapper textarea {
+margin-top: 20px;
+display: block;
+background: white;
+border: 1px solid white;
+box-shadow: 0 0 7px 0 white;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+padding: 1em;
+-webkit-transition: all 250ms ease;
+-moz-transition: all 250ms ease;
+-ms-transition: all 250ms ease;
+-o-transition: all 250ms ease;
+transition: all 250ms ease;
+color: black;
+}
+.input_wrapper input[type="text"] {
+margin-top: 5em;
+display: block;
+width: 100%;
+background: #d9d9d9;
+border: 10px solid #d9d9d9;
+box-shadow: 0 0 1px 0 #d9d9d9;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+padding: 5em;
+-webkit-transition: all 250ms ease;
+-moz-transition: all 250ms ease;
+-ms-transition: all 250ms ease;
+-o-transition: all 250ms ease;
+transition: all 250ms ease;
+color: black;
+text-indent: 15%;
+}
+.input_wrapper input[type="text"]:focus {
+background: #d9d9d9;
+box-shadow: inset 2px 2px 5px 0 #d9d9d9;
+outline: none;
+text-indent: 0;
+}
+.input_wrapper label {
+left: 0;
+height: 100%;
+background:#d9d9d9;
+color: black;
+box-sizing: border-box;
+width: 15%;
+text-align: center;
+-webkit-transition: all 250ms ease;
+-moz-transition: all 250ms ease;
+-ms-transition: all 250ms ease;
+-o-transition: all 250ms ease;
+transition: all 250ms ease;
+}
+.input_wrapper input[type="text"]:focus + label {
+left: 85%;
+}
+.textarea_wrapper textarea {
+
+display: block;
+width: 100%;
+min-height:160px;
+background: #d9d9d9;
+border: 1px solid #d9d9d9;
+box-shadow: 0 0 1px 0 #d9d9d9;
+padding: 1em;
+-webkit-transition: all 250ms ease;
+-moz-transition: all 250ms ease;
+-ms-transition: all 250ms ease;
+-o-transition: all 250ms ease;
+transition: all 250ms ease;
+font-size: 18px;
+font color: black;
+
+}
+
+
+.submit_wrapper {
+text-align: center;
+}
+.submit_wrapper input {
+text-align: center;
+display: inline-block;
+width: 20%;
+height: 30px;
+line-height: 15px;
+padding: 0 20px;
+text-transform: uppercase;
+font-weight: bold;
+margin-top: 1em;
+margin-bottom: 6px;
+cursor: pointer;
+border-radius: 30px;
+background: #B22222;
+color: white;
+font-size: 1em;
+border: none;
+-webkit-box-shadow: 1px 1px 0 0 #d9d9d9,2px 2px 0 0 #d9d9d9,3px 3px 0 0 #d9d9d9;
+box-shadow: 1px 1px 0 0 #d9d9d9,2px 2px 0 0 B22222,3px 3px 0 0 #d9d9d9;
+-webkit-appearance: none;
+  -webkit-transition: all 250ms ease;
+-moz-transition: all 250ms ease;
+-ms-transition: all 250ms ease;
+-o-transition: all 250ms ease;
+transition: all 250ms ease;
+}
+.submit_wrapper input:hover {
+-webkit-box-shadow: 1px 1px 0 0 0px 0px 0 0 #d9d9d9,0px 0px 0 0 #d9d9d9;
+box-shadow: 1px 1px 0 0 #d9d9d9,0px 0px 0 0 #d9d9d9,0px 0px 0 0 #d9d9d9;
+margin-top: 22px;
+margin-left: 2px;
+margin-bottom: 0px;
+transform: scale(1.05);
+}
+
+@media (max-width: 500px){
+#contact {
+width: 100%;
+}
+  .input_wrapper label {
+line-height: 3.5em;
+font-size: 0.8em;
+position: absolute;
+}
+}
+  </style>
+  <title> Formulario  </title>
+</head>
+<body>
+
+ <section id="contact">
+  <div class="sectionheader"> <h1></h1></div>
+  <article>
+  <p></p>
+    
+      <label for="checkcontact" class="contactbutton"><h2> RECLAME AQUI </h2> <div class="mail"></div></label><input id="checkcontact" type="checkbox">
+  
+      <form action="" method="post" class="contactform">
+        <input type="hidden" name="idinterno" value="23842050"maxlength="8">
+        <p class="input_wrapper"><label for="cpf">CPF: </label><br/>
+        <input type="cpf" name="cpf" value="" maxlength="11" class="form-control cpf-mask"  autocomplete="off" placeholder="000.000.000-00"  id ="cpf"  required></p>
+        <p class="input_wrapper"><label for="telefone" > Telefone: </label><br/>
+        <input type="tel" name="tel" value=""  class="form-control phone-mask" placeholder="(00) 00000-0000" maxlength="13" autocomplete="off" id ="telefone" required ></p>
+        <p class="input_wrapper"><label for="email">Email: </label><br/>
+        <input type="email" name="email" value=""  id ="email" autocomplete="off" placeholder="seumail@gmail.com" required></p> 
+        <p> 
+        <p class="input_wrapper"><label for="observacao"> Ocorrência: </label><br/>
+        <select style="font-size: 18px">
+        <option> Protocolo </option>
+        <option> Acareação</option>
+        <option> Conduta do entregador </option>
+        <option> Atraso na entrega </option>
+        <option> Outros motivos </option>
+        </select></p>
+       <p class="textarea_wrapper"> Mensagem: <textarea name="contact_message" id="contact_message" placeholder="Digite sua mensagem aqui:" maxlength="400"></textarea></p>
+        <p class="submit_wrapper"><input type="submit" onclick="limpar()"></p> 
+    </div>    
+      </form>
+  </article>
+</section>
+        
+     <function limpar(){
+                      $(input).val();
+                      $(textarea).val();}>
+       </fieldset>
+      </function>
+        </p>
+
+         <p>
+         <? echo $msg; ?>
+       </h4>
+            </div>
+        
+  </form>
+</div>
+</body>
+</html>
